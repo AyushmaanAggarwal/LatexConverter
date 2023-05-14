@@ -1,0 +1,16 @@
+{
+    "name": "LatexConverter",
+    "version": "2.0",
+    "description": "converts plain text latex to latex code",
+    "author": "Ayushmaan Aggarwal",
+    "license": "GPL-3.0-only",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "request": "^2.88.2",
+        "electron": "^24.3.0",
+        "request-promise": "^4.2.6"
+    }
+}
