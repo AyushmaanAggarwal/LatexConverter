@@ -1,6 +1,6 @@
 {
   "name": "LatexConverter",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "Converts plain text latex to latex code",
   "author": "Ayushmaan Aggarwal <ayushmaandevelopment@gmail.com>",
   "homepage": "https://github.com/AyushmaanAggarwal/LatexConverter",
@@ -15,21 +15,24 @@
       "target": [
         {
           "target": "pacman",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ]
     }
   },
   "scripts": {
+    "start": "electron .",
     "app:dir": "electron-builder --dir",
     "app:dist": "electron-builder"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "request-promise": "^0.0.1"
+    "node-fetch": "^2.6.11"
   },
   "devDependencies": {
-    "electron-builder": "^24.4.0",
-    "electron": "^24.3.0"
+    "electron": "^24.3.0",
+    "electron-builder": "^24.4.0"
   }
 }
