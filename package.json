@@ -5,22 +5,38 @@
   "author": "Ayushmaan Aggarwal",
   "license": "GPL-3.0-only",
   "main": "main.js",
+  "build": {
+    "appId": "com.ayushmaanaggarwal.latexconverter",
+    "mac": {
+      "category": "Utility"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "pacman",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        },
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+      ]
+    }
+  },
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "app:dir": "electron-builder --dir",
+    "app:dist": "electron-builder"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "request-promise": "^0.0.1"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-flatpak": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
+    "electron-builder": "^24.4.0",
     "electron": "24.3.0"
   }
 }
