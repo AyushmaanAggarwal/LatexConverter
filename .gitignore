@@ -4,6 +4,10 @@ package-lock.json
 tests.py
 out/
 forge_config*
+website/build
+website/app.spec
+website/__pycache__
+website/dist
 # Logs
 logs
 *.log
