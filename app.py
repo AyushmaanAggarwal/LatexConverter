@@ -1,6 +1,11 @@
-from flask import Flask, render_template, request
+try:
+    from flask import Flask, render_template, request
+    import requests
+except ImportError:
+    print('Error, flask, requests not installed or found on system')
+    print('Please run pip install flask requests')
+
 from replaceLatexSymbols import converter
-import requests
 
 app = Flask(__name__)
 
