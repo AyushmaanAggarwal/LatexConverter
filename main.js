@@ -1,3 +1,6 @@
+import fetch from 'node-fetch';
+import electron from 'electron';
+
 const electron = require( "electron" );
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -17,7 +20,7 @@ app.on(
     {
         var subpy = require( "child_process" ).spawn( "python", [ "./app.py" ] );
         // var subpy = require( "child_process" ).spawn( "./dist/hello.exe" );
-        var rp = require( "request-promise" );
+        const fetch = require("node-fetch");
         const mainAddr = "http://127.0.0.1:5000";
         var countLog = 50;
         
@@ -40,27 +43,20 @@ app.on(
         
         var StartUp = function()
         {
-            rp( mainAddr )
-            .then(
-                function( htmlString )
-                {
-                    console.log( "server started!" );
-                    OpenWindow();
-                }
-                )
-            .catch(
-                function( err )
-                {
-
-                    if (countLog > 50) {
-                        console.log( "Waiting for the server start..." );
-                        countLog = 0;
-                    }
-                    countLog = countLog + 1;
-                    // without tail call optimization this is a potential stack overflow
-                    StartUp();
-                }
-                );
+            fetch(final_url, params)
+              .then((htmlString) => {
+                  console.log( "server started!" );
+                  OpenWindow();
+              })
+              .catch((err) => {
+                  if (countLog > 50) {
+                      console.log( "Waiting for the server start..." );
+                      countLog = 0;
+                  }
+                  countLog = countLog + 1;
+                  // without tail call optimization this is a potential stack overflow
+                  StartUp();
+              });
         };
 
         // fire!
