@@ -1,16 +1,26 @@
 {
-    "name": "LatexConverter",
-    "version": "2.0",
-    "description": "converts plain text latex to latex code",
-    "author": "Ayushmaan Aggarwal",
-    "license": "GPL-3.0-only",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron ."
-    },
-    "dependencies": {
-        "request": "^2.88.2",
-        "electron": "^24.3.0",
-        "request-promise": "^4.2.6"
-    }
+  "name": "LatexConverter",
+  "version": "0.3.0",
+  "description": "Converts plain text latex to latex code",
+  "author": "Ayushmaan Aggarwal",
+  "license": "GPL-3.0-only",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "request-promise": "^0.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-flatpak": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "electron": "24.3.0"
+  }
 }

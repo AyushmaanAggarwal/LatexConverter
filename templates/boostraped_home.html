@@ -9,17 +9,16 @@
   </head>
   <body class="bg-body-secondary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
-        <span class="navbar-brand h1">The Latex Plain Text Converter</span>
+        <h1><span class="navbar-brand">The Latex Plain Text Converter</span></h1>
     </nav>
     <div class="card  m-5 bg-dark">
       <div class="card-body">
         <h4 class="card-title">Input Text :</h4>
         <form action="/" method="POST" id="myform">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Enter Copied Plain Text Latex" name="copiedText" required="required"
-            onchange = "myHandler();" onkeypress = "this.onchange();" onpaste = "this.onchange();" oninput = "this.onchange();">
+            <textarea class="form-control" placeholder="Enter Copied Plain Text Latex" name="copiedText" rows=7 required="required" onchange = "myHandler();" onkeypress = "this.onchange();" onpaste = "this.onchange();" oninput = "this.onchange();"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-outline-light">Submit</button>
         </form>
     </div></div>
     <div class="card-columns">

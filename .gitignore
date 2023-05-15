@@ -2,7 +2,8 @@
 __pycache__/
 package-lock.json
 tests.py
-
+out/
+forge_config*
 # Logs
 logs
 *.log
