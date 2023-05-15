@@ -1,10 +1,5 @@
-try:
-    from flask import Flask, render_template, request
-    import requests
-except ImportError:
-    print('Error, flask, requests not installed or found on system')
-    print('Please run pip install flask requests')
-
+from flask import Flask, render_template, request
+import requests
 from replaceLatexSymbols import converter
 
 app = Flask(__name__)
@@ -19,4 +14,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=3213)
