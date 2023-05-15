@@ -1,6 +1,6 @@
 {
   "name": "LatexConverter",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Converts plain text latex to latex code",
   "author": "Ayushmaan Aggarwal <ayushmaandevelopment@gmail.com>",
   "homepage": "https://github.com/AyushmaanAggarwal/LatexConverter",
@@ -11,6 +11,7 @@
     "mac": {
       "category": "Utility"
     },
+    "extraResources": "app",
     "linux": {
       "target": [
         {

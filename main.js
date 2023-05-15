@@ -1,5 +1,6 @@
 const electron = require( "electron" );
 const app = electron.app;
+const path = require('path');
 const BrowserWindow = electron.BrowserWindow;
 var mainWindow = null;
 
@@ -15,35 +16,17 @@ app.on(
     "ready",
     function()
     {
-        // var subpy = require( "child_process" ).spawn( "python", [ "./website/app.py" ] );
+        const backend = path.join(app.getAppPath(),"../app");
+        // console.log("Starting "+backend)
 
-        //        subpy.stdout.on('data', function (data) {
-        //            console.log("data: ", data.toString('utf8'));
-        //        });
-        //        subpy.stderr.on('data', (data) => {
-        //            console.log(`stderr: ${data}`); // when error
-        //        });
-        var subpy = require('child_process').spawn(process.cwd()+"/app");
+        var subpy = require('child_process').spawn(backend);
         subpy.stdout.on('data', function (data) {
             console.log("data: ", data.toString('utf8'));
         });
         subpy.stderr.on('data', (data) => {
             console.log(`stderr: ${data}`); // when error
         });
-        //        let backend;
-        //        backend = process.cwd() + '/app'
-        //        var execfile = require('child_process').execFile;
-        //        execfile(
-        //            backend,
-        //            { windowsHide: true,},
-        //            (err, stdout, stderr) => {  if (err)
-        //            {
-        //                console.log(err);
-        //            }  if (stdout) {
-        //                console.log(stdout);
-        //            }  if (stderr) {
-        //                console.log(stderr);
-        //            }})
+
         const fetch = require("node-fetch");
         const mainAddr = "http://127.0.0.1:3214";
         const maxLogCount = 100;
@@ -52,9 +35,7 @@ app.on(
         var OpenWindow = function()
         {
             mainWindow = new BrowserWindow( { width: 800, height: 600 } );
-            // mainWindow.loadURL( "file://" + __dirname + "/index.html" );
             mainWindow.loadURL( mainAddr );
-            // mainWindow.webContents.openDevTools();
             mainWindow.menuBarVisible = false;
             mainWindow.on(
                 "closed",
@@ -62,14 +43,6 @@ app.on(
                 {
                     mainWindow = null;
                     subpy.kill( "SIGINT" );
-                    //                    const { exec } = require('child_process');
-                    //                    execfile.kill('SIGINT')
-                    //                    exec('taskkill /f /t /im app', (err, stdout, stderr) => { if (err) {
-                    //                        console.log(err);
-                    //                        return; }
-                    //                        console.log(`stdout: ${stdout}`);
-                    //                        console.log(`stderr: ${stderr}`);
-                    //                    });
                 }
                 );
         };
