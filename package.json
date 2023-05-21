@@ -1,39 +1,39 @@
 {
-  "name": "LatexConverter",
-  "version": "0.5.1",
-  "description": "Converts plain text latex to latex code",
-  "author": "Ayushmaan Aggarwal <ayushmaandevelopment@gmail.com>",
-  "homepage": "https://github.com/AyushmaanAggarwal/LatexConverter",
-  "license": "GPL-3.0-only",
-  "main": "main.js",
-  "build": {
-    "appId": "com.ayushmaanaggarwal.latexconverter",
-    "mac": {
-      "category": "Utility"
-    },
-    "extraResources": "app",
-    "linux": {
-      "target": [
-        {
-          "target": "pacman",
-          "arch": [
-            "x64"
-          ]
+    "name": "LatexConverter",
+    "version": "0.5.1",
+    "description": "Converts plain text latex to latex code",
+    "author": "Ayushmaan Aggarwal <ayushmaandevelopment@gmail.com>",
+    "homepage": "https://github.com/AyushmaanAggarwal/LatexConverter",
+    "license": "GPL-3.0-only",
+    "main": "main.js",
+    "build": {
+        "appId": "com.ayushmaanaggarwal.latexconverter",
+        "mac": {
+            "category": "Utility"
+        },
+        "extraResources": "app",
+        "linux": {
+            "target": [
+                {
+                    "target": "pacman",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
         }
-      ]
+    },
+    "scripts": {
+        "start": "electron .",
+        "app:dir": "electron-builder --dir",
+        "app:dist": "electron-builder"
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0",
+        "node-fetch": "^2.6.11"
+    },
+    "devDependencies": {
+        "electron": "^24.3.0",
+        "electron-builder": "^24.4.0"
     }
-  },
-  "scripts": {
-    "start": "electron .",
-    "app:dir": "electron-builder --dir",
-    "app:dist": "electron-builder"
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "node-fetch": "^2.6.11"
-  },
-  "devDependencies": {
-    "electron": "^24.3.0",
-    "electron-builder": "^24.4.0"
-  }
 }

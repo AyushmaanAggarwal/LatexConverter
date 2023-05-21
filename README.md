@@ -1,6 +1,7 @@
 # LatexConverter
 Converts copied plaintext latex into the latex typeset language
-
+## Change conversion symbols
+The plaintext to latex conversion table can be edited in website/symbols with the following format \<plain text symbol\>:\<latex command\>
 ## To compile from source
 Convert flask app to compiled application
 ```
@@ -19,4 +20,9 @@ Install application
 ```
 cd dist
 sudo pacman -U LatexConverter-[version].pacman
+```
+
+## To run
+```
+latexconverter
 ```

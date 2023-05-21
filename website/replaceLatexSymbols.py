@@ -1,11 +1,12 @@
 import sys
 
-#assert len(sys.argv)==2, "Need to pass in string into python program"
+
+# assert len(sys.argv)==2, "Need to pass in string into python program"
 # Get string
-#copy_string = sys.argv[1]
+# copy_string = sys.argv[1]
 def converter(copy_string):
-    assert type(copy_string)==type(""), "Invalid parameter into python program"
-    
+    assert type(copy_string) == type(""), "Invalid parameter into python program"
+
     conv_dict = {}
     with open("symbols", "r") as file:
         for line in file:
