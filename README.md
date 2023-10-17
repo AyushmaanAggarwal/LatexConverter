@@ -9,12 +9,10 @@ symbol\>:\<latex command\>
 
 ## To compile from source
 
-Convert flask app to compiled application
+Depedencies
 
 ```
-cd website
-pyinstaller -w --onefile --add-data "templates:templates" --add-data "replaceLatexSymbols.py:replaceLatexSymbols.py" --add-data "symbols:symbols" --distpath .. app.py
-cd ..
+sudo pacman -S python-flask
 ```
 
 Compile electron application for pacman format(arch only)
