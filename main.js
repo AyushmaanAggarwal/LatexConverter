@@ -1,6 +1,6 @@
 const electron = require("electron");
 const app = electron.app;
-const path = require('path');
+const path = require('node:path');
 const BrowserWindow = electron.BrowserWindow;
 var mainWindow = null;
 
@@ -14,10 +14,14 @@ app.on(
 app.on(
     "ready",
     function () {
-        const backend = path.join(app.getAppPath(), "../app");
-        // console.log("Starting "+backend)
+        //const backend = path.join(app.getAppPath(), "app");
+        const backend = path.join(app.getAppPath(), "../../website/app.py");
 
-        var subpy = require('child_process').spawn(backend);
+        console.log("Starting " + backend)
+
+        //var subpy = require('child_process').spawn(backend);
+        var subpy = require('child_process').spawn('python', [backend]);
+        //var subpy = require('UtilityProcess').fork(backend);
         subpy.stdout.on('data', function (data) {
             console.log("data: ", data.toString('utf8'));
         });
@@ -27,7 +31,7 @@ app.on(
 
         const fetch = require("node-fetch");
         const mainAddr = "http://127.0.0.1:3214";
-        const maxLogCount = 100;
+        const maxLogCount = 10;
         var countLog = maxLogCount;
 
         var OpenWindow = function () {
@@ -57,7 +61,7 @@ app.on(
                     }
                     countLog = countLog + 1;
                 });
-        };
+        }
 
         // fire!
         StartUp();

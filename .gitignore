@@ -8,6 +8,8 @@ website/build
 website/app.spec
 website/__pycache__
 website/dist
+app.spec
+build/
 # Logs
 logs
 *.log

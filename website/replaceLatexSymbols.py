@@ -1,4 +1,5 @@
 import sys
+import os
 
 
 # assert len(sys.argv)==2, "Need to pass in string into python program"
@@ -8,7 +9,7 @@ def converter(copy_string):
     assert type(copy_string) == type(""), "Invalid parameter into python program"
 
     conv_dict = {}
-    with open("symbols", "r") as file:
+    with open(f"{os.environ['HOME']}/.config/latex_symbols", "r") as file:
         for line in file:
             key, value = line.split(":", 1)
             conv_dict[key] = value
